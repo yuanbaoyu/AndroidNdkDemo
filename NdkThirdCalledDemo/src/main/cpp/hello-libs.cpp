@@ -13,7 +13,7 @@ Java_com_xinghai_androidndkdemo_MainActivity_stringFromJNI1(JNIEnv *env, jobject
     // TODO
     std::string tag = "ndk third called";
     char* msg = "日志打印";
-    __android_log_print(ANDROID_LOG_DEBUG, tag.c_str(), "%d\n", sum(1, 6));
+    __android_log_print(ANDROID_LOG_DEBUG, tag.c_str(), "%d%s\n", sum(1, 6), msg);
     std::string hello = "Hello from C++";
 
     return env->NewStringUTF(hello.c_str());
