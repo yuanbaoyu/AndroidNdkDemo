@@ -3,8 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
 
-
-
     defaultConfig {
         applicationId "com.xinghai.androidndkdemo"
         minSdkVersion 16
@@ -16,6 +14,7 @@ android {
 
         externalNativeBuild {
             cmake {
+                arguments '-DANDROID_STL=c++_static'
                 abiFilters "armeabi-v7a"
             }
         }
@@ -26,6 +25,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            // let gradle pack the shared library into apk
+            jniLibs.srcDirs = ['../distribution/three/lib']
         }
     }
 

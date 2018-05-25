@@ -1,1 +1,1 @@
-include ':app', ':MultiNdkDemo'
+include ':app', ':MultiNdkDemo', ':NdkThirdCalledDemo'

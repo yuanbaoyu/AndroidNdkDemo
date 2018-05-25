@@ -1,0 +1,3 @@
+<resources>
+    <string name="app_name">Android ndk 调用第三方动态库示例</string>
+</resources>
